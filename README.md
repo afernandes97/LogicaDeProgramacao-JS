@@ -3,10 +3,10 @@
 Estudos adquiridos no curso de Web & React da Lets Code Academy https://letscode-academy.com/
 
 
-#CONTEUDO ESCRITO - BASE ESTUDOS
+# CONTEUDO ESCRITO - BASE ESTUDOS
 
 
-#Variáveis
+# Variáveis
 
 Variáveis são o conceito mais básico da programação. De forma super simplificada é atribuir um "apelido" 
 a um valor. Isso permite que esse valor seja lido e modificado durante o programa.
@@ -59,7 +59,7 @@ em vez de var, o que fará com que os escopos sejam respeitados.
 O const impede que o valor possa ser alterado após ser iniciado, gerando um erro ao ser tentado */
 
 
-#Condicionais
+# Condicionais
 Operadores Lógicos
 Em programação, condicionais são esturtura de decisões. O código executo de uma maneiro ou de outra a 
 depender de uma condição, que por sua vez será interpretada como verdadeiro ou falso. Esse tipo de dado 
@@ -90,11 +90,11 @@ ser verdadeiro. O operador ! inverte o valor lógico, ou seja, verdadeiro vira f
 Para atribuição condicional de valor o JavaScript possui um operador que permite fazer uma if else 
 inline, isto é, em uma única linha. Operador tenário é representado por ?
 
-/*Switch
+/* Switch
 O Switch é uma estrutura condicional que recebe um valor e executa um código quebrando os casos que a 
 variável pode receber.
 
-/*O comando new Date().getDay() retorna o dia atual como um inteiro, começando em 0 no domingo e indo 
+/* O comando new Date().getDay() retorna o dia atual como um inteiro, começando em 0 no domingo e indo 
 até 6 para o sábado. O switch recebe a variável e quebra casos. Caso seja 1, por exemplo, definimos a 
 variável dia como "Segunda". O break representa o fim do case. Caso seja omitido o computador executará 
 o caso seguinte. Por isso é dispensável no último caso. Ainda é possível definir um padrão caso nenhum 
@@ -137,13 +137,13 @@ Nele é declarado um variável com um valor inicial, depois é determinado a con
 por fim a passo dado entre o valor inicial e o final.
 
 
-#Vetores
+# Vetores
 Vetor é uma sequência ordenada de valores. Também é chamado pelo nome em inglês, array. 
 É denotado pelo uso de colchetes, com os valores separados por vírgula.
 
 //Também é possível declarar o vetor vazio e ir adicionando pela posição os elementos
 
-/*O for-of recebe um vetor e a variável declarada vai possuir os valores dos elementos do vetor. 
+/* O for-of recebe um vetor e a variável declarada vai possuir os valores dos elementos do vetor. 
 Assim percorrendo diretamente o array inteiro.
 
 /* A alternativa é o for-in, onde a variável declarada assume o valor dos índices do vetor passado: */
@@ -156,7 +156,7 @@ que se aplica a vetor também vale para matrizes. A declaração de uma matriz s
 Em JavaScript vetores são estruturas de dados dinâmicas, isto é, de tamanho variável.
 
 
-#Funções
+# Funções
 Podemos ter duas interpretações do que são funções. A primeira de que uma função é um trecho de código 
 em que damos um nome e que é executado a cada vez que é chamado.
 
@@ -190,7 +190,7 @@ const hello2 = (name) => "Hello " + name;
 const hello3 = (name) => {return "Hello " + name;};
 
 
-#Funções de Alta Ordem
+# Funções de Alta Ordem
 Em JavaScript, funções são cidadãos de primeira classe. O que significa que podem ser tratados como 
 valores e salvo em variável. Portanto, naturalmente funções também podem ser passadas como parâmetro 
 para uma função. Em resumo, uma função de alta ordem é uma função que recebe ou retorna uma função.
@@ -202,7 +202,7 @@ e retorna uma função que recebe y e retorna x+y. Note que ao passar 2 para som
 função que soma 2. E assim sucessivamente.
 
 
-#Map
+# Map
 A função Map é o primeiro caso de aplicação de função de alta ordem que vamos ver. Essa 
 função é usada para transformar vetores. Passamos uma função para o Map, e essa função é 
 aplicada a cada item do vetor.
@@ -211,13 +211,13 @@ aplicada a cada item do vetor.
 tipo específico de dado também é necessário fazer a declaração de uma função.
 
 
-#Filter
+# Filter
 Filter é uma função de alta ordem semelhante ao map, a diferença é que o objetivo do 
 filter é filtrar elementos do vetor. Portanto a função passada para o deve receber o elemento 
 e retornar um booleano. Se retorna true o elementor será mantido, senão retirado.
 
 
-#Reduce
+# Reduce
 O objetivo reduce é reduzir um vetor a um valor ou objeto. Por exemplo, somar todos os elementos de 
 um vetor é reduzir ele a um valor. O reduce é um pouco mais complexos que o map e o filter por que 
 deve ser passado um parâmetro a mais.
@@ -285,43 +285,4 @@ das notas do item atual. Também contém um contador para cada nota para simplif
 uma média posteriormente. Observe que o estado inicial foi passado por parâmetro depois da função no 
 reduce. Sem ele não teríamos de onde tirar os valores que estão no objeto.*/
 
-
-let matriz = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-]
-
-let resultado = matriz.reduce(
-    (acumulador,linha,indice) => acumulador + linha[indice]
-,0);
-
-console.log(resultado);
-
-
-let matriz2 = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-];
-
-let resultado2 = matriz2.reduce(
-    (estado,item) => [
-        estado[0]+item[0],
-        estado[1]+item[1],
-        estado[2]+item[2]
-    ]
-);
-console.log(resultado2);
-
-let matriz3 = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-]
-
-let resultado3 = matriz3.map(
-    linha => linha.reduce((estado,item)=>estado+item)
-)
-console.log(resultado3)
 
