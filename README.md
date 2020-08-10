@@ -64,9 +64,11 @@ O const impede que o valor possa ser alterado após ser iniciado, gerando um err
 Em programação, condicionais são esturtura de decisões. O código executo de uma maneiro ou de outra a 
 depender de uma condição, que por sua vez será interpretada como verdadeiro ou falso. Esse tipo de dado 
 é chamado de booleano e possui valor true ou false. Uma condição é uma operação lógica que tem como 
-resultado um valor booleano. Os operadores de comparação em JavaScript são:
+resultado um valor booleano. 
 
-* Operador	Nome	Exemplo	Resultado
+* Os operadores de comparação em JavaScript são:
+
+```
 >	Maior	2 > 0	true
 >=	Maior ou igual	2 >= 2	true
 <	Menor	2 < 0	false
@@ -75,12 +77,13 @@ resultado um valor booleano. Os operadores de comparação em JavaScript são:
 ===	Igual em valor e tipo	1 === '1'	false
 !=	Diferente	1 != 2	true
 !==	Diferente em valor ou tipo	'5' !== 5	false
-Os operadores lógicos em JavaScript são:
-
-* Operador	Nome	Exemplo	Resultado
+```
+* Os operadores lógicos em JavaScript são:
+```
 &&	E	2 > 0 && 1!==1	false
 ||	Ou	2 > 0 || 1!==1	true
 !	Não	!(1===1)	false
+```
 Os operadores de comparação retornam um booleano a depender do resultado da comparação. E os operados 
 lógicos fazem operações sobre valores booleano. O operador && só retorna verdadeiro se as duas 
 condições forem verdadeira. Enquanto para o operador || basta uma das condições ser para o resultado 
@@ -104,7 +107,7 @@ dos casos exista usando o default.
 interpreta como se fosse true ou false. Esses casos chamamos de truthy e false.
 
 /*JavaScript interpreta os seguintes valores como falso:
-
+```
 0
 '' ou ""
 null
@@ -117,7 +120,7 @@ Todos os demais são interpretados como verdadeiro. Alguns exemplos de truthy:
 function(){}
 Uma utilidade dessa característica é verificar se uma variável está definida antes de usá-la. 
 Assim evitando erro.
-
+```
 ### Laços de Repetição
 Afim de fazer operações repetitivas, o JavaScript oferece algumas opções de estruturas de repetições. 
 Também chamados de laços ou loops.*/
@@ -161,7 +164,7 @@ em que damos um nome e que é executado a cada vez que é chamado.
 * Formas de Declarar
 Além da forma tradicional de declarar, há ainda duas formas de utilizar funções, que é usando do 
 artifício de que em JavaScript funções são valores. */
-
+```
 // Usando function
 function somar(a,b){
     return a + b;
@@ -186,7 +189,7 @@ console.log(somar3(22,33));
 const hello1 = () => "Hello World!";
 const hello2 = (name) => "Hello " + name;
 const hello3 = (name) => {return "Hello " + name;};
-
+```
 
 ## Funções de Alta Ordem
 Em JavaScript, funções são cidadãos de primeira classe. O que significa que podem ser tratados como 
@@ -221,12 +224,11 @@ um vetor é reduzir ele a um valor. O reduce é um pouco mais complexos que o ma
 deve ser passado um parâmetro a mais.
 
 * Vejamos o exemplo da soma:
-
-
+```
 const vetor2 = [1,2,3,4,5,6];
 
 const soma1 = vetor2.reduce((estado, item) => estado + item);
-
+```
 * Além do elemento do vetor, é necessário passar a variável que vai armazenar a evolução do estado ao longo 
 da aplicação da função no vetor. No caso podemos pensar nessa variável estado como um acumulador que guarda 
 a soma parcial até o presente elemento da iteração. Assim, a função recebe a soma acumulada e o novo item, 
@@ -236,10 +238,11 @@ estado por ser o primeiro, então o segundo elemento recebe o primero como estad
 explicitamente qual seria o estado inicial a ser passado para o primeiro elemento, basta passar como 
 parâmetro para o reduce:
 
-
+```
 const vetor1 = [1,2,3,4,5,6];
 
 const soma = vetor1.reduce((estado, item) => estado + item, 0);
+```
 /*Na linha 3 adicionamos o zero como estado inicial. Em casos simples como esse não será necessário 
 declarar explicitamente, mas ao trabalhar com objetos é necessário.
 
@@ -248,6 +251,7 @@ trecho após o módulo de introdução a orientação a objeto.
 
 Suponha que tenha um vetor de objetos aluno que possuem três atributos: nome, nota 1 e nota 2.
 */
+```
 let vetor = [
   { nome : 'nome1', nota1 : 5, nota2 : 4 },
   { nome : 'nome2', nota1 : 4, nota2 : 3 },
@@ -255,9 +259,10 @@ let vetor = [
   { nome : 'nome4', nota1 : 2, nota2 : 7 },
   { nome : 'nome5', nota1 : 9, nota2 : 9 },
 ];
+```
 /*Vamos usar o reduce para somar todas a notas 1 e 2 dos alunos. Para isso, declaramos primeiro 
 o objeto a ser recebido como estado inicial:*/
-
+```
 const estadoInicial = { 
     somaNota1 : 0, 
     somaNota2 : 0, 
@@ -276,6 +281,7 @@ const estadoInicial = {
   }, estadoInicial);
 
   console.log(result)
+ ```
 /*Note que podemos escrever em linhas separadas para facilitar a escrita e leitura. Esse reduce, 
 a cada rodada, cria um novo objeto que contém a somatória das notas do estado anterior com o valor 
 das notas do item atual. Também contém um contador para cada nota para simplificar no cálculo de 
